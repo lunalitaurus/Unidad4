@@ -1,0 +1,113 @@
+---
+title: 'Unidad 4: Importar y exportar datos'
+author: "Rubén Muñoz"
+date: "2024-01-27"
+output: 
+ html_document:
+   theme: cerulean
+   fig_caption: yes
+   toc: yes
+   toc_depth: 3
+   toc_float: yes
+   css: custom.css
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE )
+
+```
+## **Bienvenida** 
+ En esta lección aprederemos cómo podemos **importar** y **exportar** datos. Principalmente en formato *.csv* y *.txt*, los cuales son los formatos generales donde guardamos nuestros datos o se ponen a disposición de las personas. :)
+   
+<div style="text-align:center"> 
+![Cute Kitty using R](../imagenes/kittyInComputer.png){width=45%}  
+</div>
+
+## **Directorio de trabajo**
+Un directorio de trabajo es una carpeta con una ruta en nuestro dispositivo en el que se alojan los archivos que usaremos y guardaremos para un trabajo o análisis. Podemos entrar y salir del directotio siempre que queramos. 
+
+### Conocer directorio actual `getwd()`
+Con la función `getwd()` al abrir R podemos saber qué directorio estamos usando. Sólo debemos escribirla y nos dirá la ruta.
+```{r, results='hide'}
+getwd()
+```
+
+
+### Definir directorio
+Con la función `setwd("C:/rutaDelDirectorio")` podemos definir un directorio específico para trabajar. Es importante colocar la ruta entre comillas para que R la reconozca correctamente.
+ También se puede definir el directorio de trabajo en la interfaz de RStudio. Para ello sólo es necesario ir a la barra superior de opciones en el apartado `Session>Set working directory>Choose Diretory` (ver Imagen)
+
+<div style="text-align:center"> 
+![Establecer un working directory en R (directorio de trabajo)](../imagenes/setwdRStudio.png){width=80%}  
+</div>
+  
+Una vez ahí seleccionaremos la carpeta donde queremos importar o exportar los datos. (Nota: Es buena idea tener carpetas ordenadas sin nombres muy complejos ni caracteres especiales)
+
+## **Leer archivos: *.csv*, *.txt* **
+Para leer archivos usamos la función `read."formato"("./rutaDelArchivo.formato")`. En el caso de que queramos leer un csv usamos la función `read.csv()`. Ejemplo:
+
+```{r, results='hide'}
+# Usamos un archivo presente en mi directorio de trabajo
+
+ read.csv("baseEjemploRanitas.csv")
+
+```
+Con un archivo *.txt* usamos la función `read.table()`
+Al cargar archivos nuevos nos interesa almacenarlos en variables para seguirlos usando.
+```{r}
+# Es conveniente gurdarlo en una variable como cualquier otro objeto de R
+ ranitas <- read.csv("baseEjemploRanitas.csv",
+                     header = T ## Éste parámetro especifíca si tiene encabezado o no. De no tener le asigna un valor por defecto
+                     #,row.names = 1 # Éste sirve para indicar que la primer columna es el nombre de los renglones
+                     )
+
+# Ahora podemos usar la función head() para ver qué contiene
+ head(ranitas)
+ 
+# Son características de ranitas, salamandras y cecilias tomadas para un artículo.
+ 
+```
+## **Acceso a archivos cargados**
+Para ver el archivo es tan simple como escribir el nombre de la variable donde guardamos el archivo para que se imprima en la consola. Sin embarrgo en **RStudio** se puede hacer hacienco click dos veces sobre el objeto en el apartado de **Data** ubicado a la derecha de la interfaz de RStudio.
+<div style="text-align:center"> 
+![Data](../imagenes/dataRStudio.png){width=60%} </div>
+
+Al hacer click nos enviará hacia un visualizador donde observaremos nuestros datos y sabremos cuántos registros tiene ,así como, ordenarlos en orden alfabético, etc. Nota: esto no afectará nuestro arcvhivo orginal, sólo es para visualizarse.    
+<div style="text-align:center"> 
+
+![CSV leído](../imagenes/dataRStudio1.png){width=90%}  
+</div>
+
+### Exploración básica
+Al archivo cargado podemos aplicarle diferentes funciones para saber sobre éste.
+Podemos iniciar con:
+
+```{r}
+#Para ver sus primeros datos
+ head(ranitas)
+# Para un resumen del objeto: Longitud, Clase, Nombre de los campos, etc.
+ summary(ranitas)
+# Para saber el nombre de las columnas
+ colnames(ranitas) #Columnas
+ rownames(ranitas) #Renglones
+# Para conocer el nombre de las especies
+ table(ranitas$Species)
+ 
+```
+
+## **Exportar datos**
+Para exportar nuestros datos usamos la función `write.csv()` o `write.table()`. R funciona como convertidor de formato por lo que si originalmente nuestro archivo era *.csv* podemos guardarlo como *.txt*
+Ejemplo:
+
+```{r}
+# Aquí pasamos de un .csv a un .txt
+write.table(ranitas, ## Objeto a guardar
+            file = "ranitasEjemploTexto.txt" ## Aquí podemos poner la ruta, si no sólo se guardará en el directorio actual
+            ## sep = "Hola" #Con lo que separará
+            ## row.names = "" Aquí podemos indicar si los valores de la primer columna servirán para darle nombre a los renglones
+            ## col.names = Nombre de las columnas
+            )
+```
+
+##### **Terminamos con la Unidad 4 ¡Felicidades!**

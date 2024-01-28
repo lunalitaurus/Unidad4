@@ -1,0 +1,31 @@
+Species,Functional group,Body size,Leg length , Respiration type,Fertilization type
+Gymnopis syntrema (De),FG1,EL,NL,Lung,Int
+Smilisca cyanosticta (Hy5),FG2,L,EL,Lung,Ext
+Bolitoglossa mexicana (Pl1),FG3,M,S,Skin,Int
+Bolitoglossa mulleri (Pl2),FG3,M,M,Skin,Int
+Bolitoglossa rufescens (Pl3),FG3,S,S,Skin,Int
+Oedipina elongata (Pl4),FG3,M,S,Skin,Int
+Craugastor alfredi (Cr1),FG4,S,EL,Lung,Ext
+Eleutherodactylus leprus (El),FG4,S,EL,Lung,Ext
+Lithobates maculatus (Ra2),FG5,L,L,Lung,Ext
+Lithobates vaillanti (Ra1),FG5,L,EL,Lung,Ext
+Rhinophrynus dorsalis (Rhi),FG5,M,L,Lung,Ext
+Trachycephalus typhonius (Hy6),FG6,L,L,Lung,Ext
+Incilius campbelli (Bu1),FG6,L,L,Lung,Ext
+Incilius valliceps (Bu2),FG6,M,L,Lung,Ext
+Rhinella horribilis (Bu3),FG6,L,L,Lung,Ext
+Leptodactylus fragilis (Le1),FG7,S,L,Lung,Ext
+Leptodactylus melanonotus (Le2),FG7,S,L,Lung,Ext
+Agalychnis callidryas (Phy),FG8,M,EL,Lung,Ext
+Hyalinobatrachium fleischmanni ,FG8,S,EL,Lung,Ext
+Craugastor laticeps (Cr2),FG9,S,EL,Lung,Ext
+Craugastor loki (Cr3),FG9,S,EL,Lung,Ext
+Craugastor palenque (Cr4),FG9,M,EL,Lung,Ext
+Gastrophyne elegans (Mic),FG10,S,L,Lung,Ext
+Dendropsophus ebraccatus,FG10,S,L,Lung,Ext
+Dendropsophus microcephalus  (Hy1),FG11,S,EL,Lung,Ext
+Scinax staufferi (Hy3),FG11,S,L,Lung,Ext
+Tlalocohyla loquax (Hy7),FG11,S,L,Lung,Ext
+Tlalocohyla picta (Hy8),FG11,S,EL,Lung,Ext
+Lithobates brownorum (Ra1),FG11,L,EL,Lung,Ext
+Smilisca baudinii ,FG11,M,L,Lung,Ext
